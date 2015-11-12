@@ -1,8 +1,8 @@
 /// <reference path="../../tools/typings/tsd.d.ts" />
 import * as angular from 'angular';
 import 'angular-ui-router';
-import {routes} from './layout/routes';
-import './about/index';
+import {routes} from './routes';
+import './repositories/repositories';
 
 var app = angular.module('app', ['ui.router', 'about']);
 app.config(routes);

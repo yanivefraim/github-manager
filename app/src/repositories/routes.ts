@@ -6,22 +6,14 @@ routes.$inject = ['$stateProvider', '$urlRouterProvider'];
 function routes ($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
     'use strict';
     $stateProvider
-
-        .state('main', {
-            abstract: true,
-            url: '/',
-            templateUrl: 'src/layout/main.html'
-        })
-        .state('main.repositories', {
+    .state('main.repositories', {
             url: '',
             views: {
                 'content@main': {
-                    templateUrl: 'src/layout/repositories.html'
+                    templateUrl: 'src/repositories/repositories.html'
                 }
             }
         });
-
-    $urlRouterProvider.otherwise('/');
 }
 
 export {routes}
