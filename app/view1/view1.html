@@ -1,6 +1,7 @@
 <p>This is the partial for view 1.</p>
+<input type="text" ng-model="view1Ctrl.search" ng-model-options="{ debounce: 500 }" />
 <ul>
   <li ng-repeat="item in view1Ctrl.items">
-    {{item.login}}
+    <a href="#/repository/{{item.full_name}}">{{item.full_name}}</a>
   </li>
 </ul>
