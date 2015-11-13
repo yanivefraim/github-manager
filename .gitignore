@@ -1,8 +1,7 @@
+logs/*
+!.gitkeep
 node_modules/
-app/src/**/*.js
-app/src/**/*.js.map
-build/
-coverage/
-karma_html/
-jspm_packages/
-.idea/
+bower_components/
+tmp
+.DS_Store
+.idea

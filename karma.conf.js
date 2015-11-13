@@ -1,31 +1,33 @@
-/* global module */
-module.exports = function (config) {
-    'use strict';
-    config.set({
-        autoWatch: true,
-        singleRun: false,
+module.exports = function(config){
+  config.set({
 
-        frameworks: ['jspm', 'jasmine'],
+    basePath : './',
 
-        files: [
-            'node_modules/karma-babel-preprocessor/node_modules/babel-core/browser-polyfill.js',
-            {pattern: 'app/assets/images/**/*.png', watched: false, included: false, served: true},
-        ],
+    files : [
+      'app/bower_components/angular/angular.js',
+      'app/bower_components/angular-route/angular-route.js',
+      'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/components/**/*.js',
+      'app/view*/**/*.js'
+    ],
 
-        jspm: {
-            config: 'app/jspm-config/config-karma.js',
-            loadFiles: [
-                'build/development/**/*.js'
-            ]
-        },
+    autoWatch : true,
 
-        browsers: ['PhantomJS'],
+    frameworks: ['jasmine'],
 
-        proxies:  {
-            '/assets/images/': '/base/app/assets/images/'
-        },
-        reporters: ['dots'],
+    browsers : ['Chrome'],
 
-    });
+    plugins : [
+            'karma-chrome-launcher',
+            'karma-firefox-launcher',
+            'karma-jasmine',
+            'karma-junit-reporter'
+            ],
 
+    junitReporter : {
+      outputFile: 'test_out/unit.xml',
+      suite: 'unit'
+    }
+
+  });
 };
