@@ -1,5 +1,6 @@
 <p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<ul>
+  <li ng-repeat="file in view2Ctrl.files">
+    {{file.name}}
+  </li>
+</ul>

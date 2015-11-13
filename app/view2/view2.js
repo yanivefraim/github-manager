@@ -12,6 +12,10 @@ angular.module('myApp.view2', ['ui.router', 'myApp.dataService'])
    });
 }])
 
-.controller('View2Ctrl', [function() {
-
+.controller('View2Ctrl', ['dataService', function(dataService) {
+  var that = this;
+  dataService.getRepository('angular', 'angular').then(function(response) {
+    console.log(response.data);
+    that.files = response.data;
+  });
 }]);

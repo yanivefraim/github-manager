@@ -17,7 +17,7 @@ angular.module('myApp.view1', ['ui.router', 'myApp.dataService'])
   $scope.$watch('view1Ctrl.search', function(newVal, oldVal) {
     if (angular.isDefined(newVal) && newVal !== oldVal) {
 
-      dataService.getItems(newVal).then(function (response) {
+      dataService.searchRepositories(newVal).then(function (response) {
         that.items = response.data.items.slice(0,10);
         console.log(that.items);
       });
